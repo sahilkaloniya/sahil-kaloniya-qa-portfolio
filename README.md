@@ -46,10 +46,9 @@ Specialized in test planning, defect isolation, bug reproduction, fix verificati
 - TypeScript & JavaScript
 - Page Object Model (POM) Design Pattern
 - Dynamic Test Fixtures & Data-Driven Testing
-- GitHub Actions CI/CD Integration & Cross-Browser Execution
 
 ### Tools & Methodologies
-- JIRA, GitHub, Postman, Playwright, Allure Reports, Agile/Scrum
+- JIRA, GitHub, Postman, Playwright, Agile/Scrum
 
 ---
 
@@ -113,7 +112,6 @@ Postman collections, environment configurations, and REST API test validations.
 | **Manual Testing** | Functional, Regression, Smoke, Sanity, UI/UX, E2E, Boundary Value Analysis |
 | **API Testing** | Postman, REST APIs, JSON Validation |
 | **Automation** | Playwright, TypeScript, JavaScript, Page Object Model (POM) |
-| **CI/CD & Reporting** | GitHub Actions, Playwright HTML Reporter, Allure |
 | **Collaboration** | JIRA, GitHub, Agile / Scrum |
 
 ---
