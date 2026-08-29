@@ -1,133 +1,108 @@
 # Sahil Kaloniya — QA Engineer Portfolio
 
-## QA Engineer | Manual Testing | API Testing | Playwright | JavaScript/TypeScript
+## QA Engineer | Manual Testing | API Testing | Playwright | TypeScript / JavaScript
 
-QA Engineer with 2+ years of experience in manual testing of web and mobile applications, with hands-on experience in functional, regression, smoke, sanity, UI/UX, cross-browser, cross-device and end-to-end testing.
+QA Engineer with 2+ years of experience in manual and automation testing of web and mobile applications. Experienced in functional, regression, smoke, sanity, UI/UX, cross-browser, cross-device, and end-to-end testing.
 
-Experienced in test case planning and execution, defect identification and reporting, bug reproduction, fix verification and multi-role workflow validation.
+Specialized in test planning, defect isolation, bug reproduction, fix verification, multi-role workflow validation, API testing with Postman, and building Page Object Model (POM) test automation frameworks with Playwright and TypeScript.
 
-Hands-on exposure to API testing using Postman and Playwright automation using JavaScript/TypeScript.
+---
+
+## 🏆 Featured Defect: Cross-Entity State Conflict & Admin Approval Leak
+
+> **Project:** NDTSS Examination & Membership Portal  
+> **Module:** Membership & Administrative Approval API  
+> **Severity:** High | **Priority:** Major  
+> **Report:** [View Full Defect Report](./manual-testing/bug-reports/ndtss/bug-02-membership-state-conflict.md)
+
+* **The Issue:** When a user submitted both an Individual and Corporate Membership application under the same account, the user profile UI collapsed both into a single entity. Upon an administrator approving the **Individual Membership** in the backend admin portal, the system erroneously updated and approved the **Corporate Membership** instead.
+* **How It Was Found:** Traced during multi-role exploratory workflow testing by monitoring API network request payloads and state transitions between the admin approval endpoint and the user profile database records.
 
 ---
 
 ## 🧪 QA Skills
 
 ### Manual Testing
-- Functional Testing
-- Regression Testing
-- Smoke Testing
-- Sanity Testing
-- UI/UX Testing
-- End-to-End Testing
-- Cross-Browser Testing
-- Cross-Device Testing
-- Positive & Negative Testing
-- Edge-Case Testing
-- Role-Based Workflow Testing
+- Functional, Smoke, Sanity & Regression Testing
+- End-to-End & User Journey Validation
+- Cross-Browser & Multi-Device Testing
+- Positive, Negative, Edge-Case & Boundary Testing
+- Role-Based Access Control (RBAC) & Multi-Role Workflow Validation
 
 ### Test Documentation
-- Test Cases
-- Test Scenarios
-- Test Planning
-- Test Execution
-- Defect Documentation
-- Bug Reproduction
-- Retesting
-- Fix Verification
+- Test Cases, Scenarios & Test Execution Tracking
+- Test Planning & QA Strategy Documentation
+- Clear, Actionable Defect Reporting with Root-Cause Context
+- Retesting, Fix Verification & Regression Analysis
 
 ### API Testing
-- Postman
-- REST API validation
-- Request/Response validation
-- HTTP Status Code validation
-- Positive & Negative API scenarios
+- Postman Collection Management & Environment Variables
+- REST API Request/Response Payload Validation
+- HTTP Status Code, Schema & Header Verification
+- Positive & Negative API Testing Scenarios
 
 ### Automation
-- Playwright
-- JavaScript
-- TypeScript
-- End-to-End Automation
-- Regression Automation
+- Playwright Test Framework
+- TypeScript & JavaScript
+- Page Object Model (POM) Design Pattern
+- Dynamic Test Fixtures & Data-Driven Testing
+- GitHub Actions CI/CD Integration & Cross-Browser Execution
 
-### Tools
-- JIRA
-- GitHub
-- Postman
-- Playwright
-- Agile Testing
+### Tools & Methodologies
+- JIRA, GitHub, Postman, Playwright, Allure Reports, Agile/Scrum
 
 ---
 
 ## 📂 Proof of Work
 
-This repository contains selected examples of my QA work and demonstrates my approach to testing, defect identification, documentation and automation.
-
 ### 🐞 Manual Testing & Bug Reports
+Real-world, sanitized defect reports covering complex workflows, state persistence issues, boundary limits, and data leaks.
+- [View All Bug Reports](./manual-testing/bug-reports/)
+  - [NDTSS Portal Defect Reports (5 Bugs)](./manual-testing/bug-reports/ndtss/)
+  - [Salonist Partner App Defect Reports (5 Bugs)](./manual-testing/bug-reports/salonist/)
+  - [FR8NITY Defect Reports](./manual-testing/bug-reports/fr8nity/)
+  - [PartXFinder Defect Reports](./manual-testing/bug-reports/partxfinder/)
+  - [Sierra-Darien Defect Reports](./manual-testing/bug-reports/sierra-darien/)
 
-Real-world examples of defects identified during web and mobile application testing, presented in a sanitized format to protect confidential project information.
-
-[View Bug Reports](./manual-testing/bug-reports/)
+### 🤖 Playwright Test Automation Framework
+Full-scale E2E automation repository built with Playwright, TypeScript, and Page Object Model, complete with CI/CD integration.
+- [View Playwright Automation Repository](https://github.com/sahilkaloniya/playwright-typescript-automation)
 
 ### 🧪 Test Cases
-
-Examples demonstrating functional, negative, boundary, role-based and end-to-end test coverage.
-
-[View Test Cases](./manual-testing/test-cases/)
+Structured test suites demonstrating positive, negative, boundary, and role-based test coverage.
+- [View Test Cases](./manual-testing/test-cases/)
 
 ### 📋 Test Planning
-
-Examples of structured QA planning and test coverage.
-
-[View Test Plans](./manual-testing/test-plans/)
+Strategic test planning documents detailing scope, test matrices, and exit criteria.
+- [View Test Plans](./manual-testing/test-plans/)
 
 ### 🔌 API Testing
-
-Examples of API testing using Postman, including request/response validation and status-code verification.
-
-[View API Testing](./api-testing/)
-
-### 🤖 Playwright Automation
-
-Hands-on Playwright automation using JavaScript/TypeScript, including E2E and regression scenarios.
-
-[View Automation](./automation/playwright-typescript/)
+Postman collections, environment configurations, and REST API test validations.
+- [View API Testing](./api-testing/)
 
 ---
 
 ## 💼 Project Experience
 
-### NDTSS — Exam & Event Management Platform
-- Functional and end-to-end testing
-- Multi-role workflow validation
-- Exam process testing
-- Admin-panel testing
-- Cross-browser and cross-device validation
+### NDTSS — Exam & Certification Management Platform
+- Validated end-to-end multi-role workflows across Candidates, Invigilators, Examiners, and Super Admins.
+- Tested certificate generation idempotency, multi-tier membership lifecycles, and event check-in point tracking.
+
+### Salonist — Salon & Spa Partner Management App (Android)
+- Executed functional, session, and transaction testing across booking calendars and Quick Sale POS modules.
+- Tested boundary discounts, payment carry-over persistence, and customer search empty states.
 
 ### PartxFinder — Used Cars & Car Parts Marketplace
-- Buyer, seller, sub-admin and super-admin workflow testing
-- Role and permission validation
-- Search functionality testing
-- Cross-browser and cross-device testing
+- Tested buyer, seller, sub-admin, and super-admin permissions and transaction workflows.
+- Executed search filtering, inventory listing validation, and responsive mobile testing.
 
 ### Qwaiting — Queue Management Solution
-- Client-reported defect reproduction
-- Regression testing
-- Fix verification
-- Multi-role workflow validation
-- UI reliability testing
+- Reproduced client-reported production defects and verified bug fixes.
+- Performed regression testing across multi-role administrative queues and kiosk interfaces.
 
 ### Sierra Darien — Fashion E-commerce Platform
-- Functional testing
-- UI/UX testing
-- Customer and admin workflow testing
-- Cross-browser and cross-device validation
-
-### Medmine — Data & Web Application
-- Manual testing
-- Test case creation
-- Test execution
-- Test planning
-- Defect tracking
+- Tested user journeys from product catalog to cart note validations and checkout flows.
+- Executed UI/UX, responsive layout, and cross-browser compatibility tests.
 
 ---
 
@@ -135,34 +110,20 @@ Hands-on Playwright automation using JavaScript/TypeScript, including E2E and re
 
 | Category | Tools / Technologies |
 |---|---|
-| Manual Testing | Functional, Regression, Smoke, Sanity, UI/UX, E2E |
-| API Testing | Postman |
-| Automation | Playwright |
-| Languages | JavaScript, TypeScript, Python |
-| Collaboration | JIRA, GitHub |
-| Methodology | Agile |
+| **Manual Testing** | Functional, Regression, Smoke, Sanity, UI/UX, E2E, Boundary Value Analysis |
+| **API Testing** | Postman, REST APIs, JSON Validation |
+| **Automation** | Playwright, TypeScript, JavaScript, Page Object Model (POM) |
+| **CI/CD & Reporting** | GitHub Actions, Playwright HTML Reporter, Allure |
+| **Collaboration** | JIRA, GitHub, Agile / Scrum |
 
 ---
 
 ## 🎯 QA Approach
 
-My testing approach focuses on understanding how a real user interacts with a product rather than testing only the expected flow.
-
-I focus on:
-
-- What happens when users do something unexpected?
-- What happens at boundary conditions?
-- What happens when different roles interact with the same workflow?
-- Does the UI behavior match the backend/API behavior?
-- Can the issue be reproduced consistently?
-- Can the defect be clearly communicated so developers can act on it?
-- Does a fix introduce a regression somewhere else?
-
----
-
-## 📌 Current Focus
-
-Continuing to strengthen automation skills with Playwright and JavaScript/TypeScript while building deeper expertise in API testing, end-to-end testing and release-quality ownership.
+- **User-Centric & Edge-Focused:** Identify how real users break workflows when performing unexpected actions.
+- **Data & Boundary Integrity:** Rigorously test boundaries, state transitions, and calculation formulas.
+- **Frontend vs. Backend Cohesion:** Verify that client-side UI states accurately reflect API payloads and database records.
+- **Developer-Friendly Defect Reports:** Document clear reproduction steps, environment details, expected vs. actual outcomes, and system impact.
 
 ---
 
@@ -170,4 +131,5 @@ Continuing to strengthen automation skills with Playwright and JavaScript/TypeSc
 
 **Sahil Kaloniya**  
 QA Engineer  
-Email: sahilkaloniya0@gmail.com
+Email: sahilkaloniya0@gmail.com  
+GitHub: [github.com/sahilkaloniya](https://github.com/sahilkaloniya)
