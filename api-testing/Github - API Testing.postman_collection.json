@@ -1,0 +1,585 @@
+{
+  "info": {
+    "_postman_id": "eb4d4298-e862-4364-a9b0-798ba6bd8e31",
+    "name": "Github - API Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41860354"
+  },
+  "item": [
+    {
+      "name": "User Info.",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "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",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.github.com/user",
+          "protocol": "https",
+          "host": [
+            "api",
+            "github",
+            "com"
+          ],
+          "path": [
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Fetch Repositories",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var template = `\r",
+              "<style type=\"text/css\">\r",
+              "    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+              "    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+              "    .tftable tr {background-color:#ffffff;}\r",
+              "    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+              "    .tftable tr:hover {background-color:#e0ffff;}\r",
+              "</style>\r",
+              "\r",
+              "<table class=\"tftable\" border=\"1\">\r",
+              "    <tr>\r",
+              "        <th>ID</th>\r",
+              "        <th>Name</th>\r",
+              "        <th>Private</th>\r",
+              "        <th>Owner</th>\r",
+              "        <th>HTML URL</th>\r",
+              "        <th>Description</th>\r",
+              "        <th>Fork</th>\r",
+              "        <th>Size</th>\r",
+              "        <th>Stargazers Count</th>\r",
+              "        <th>Watchers Count</th>\r",
+              "        <th>Language</th>\r",
+              "        <th>Has Issues</th>\r",
+              "        <th>Has Projects</th>\r",
+              "        <th>Has Downloads</th>\r",
+              "        <th>Has Wiki</th>\r",
+              "        <th>Has Pages</th>\r",
+              "        <th>Has Discussions</th>\r",
+              "        <th>Forks Count</th>\r",
+              "        <th>Archived</th>\r",
+              "        <th>Disabled</th>\r",
+              "        <th>Open Issues Count</th>\r",
+              "        <th>License</th>\r",
+              "        <th>Allow Forking</th>\r",
+              "        <th>Is Template</th>\r",
+              "        <th>Web Commit Signoff Required</th>\r",
+              "    </tr>\r",
+              "    \r",
+              "    {{#each response}}\r",
+              "        <tr id=row_{{@key}}>\r",
+              "            <td>{{id}}</td>\r",
+              "            <td>{{name}}</td>\r",
+              "            <td>{{private}}</td>\r",
+              "            <td>{{owner.login}}</td>\r",
+              "            <td>{{html_url}}</td>\r",
+              "            <td>{{description}}</td>\r",
+              "            <td>{{fork}}</td>\r",
+              "            <td>{{size}}</td>\r",
+              "            <td>{{stargazers_count}}</td>\r",
+              "            <td>{{watchers_count}}</td>\r",
+              "            <td>{{language}}</td>\r",
+              "            <td>{{has_issues}}</td>\r",
+              "            <td>{{has_projects}}</td>\r",
+              "            <td>{{has_downloads}}</td>\r",
+              "            <td>{{has_wiki}}</td>\r",
+              "            <td>{{has_pages}}</td>\r",
+              "            <td>{{has_discussions}}</td>\r",
+              "            <td>{{forks_count}}</td>\r",
+              "            <td>{{archived}}</td>\r",
+              "            <td>{{disabled}}</td>\r",
+              "            <td>{{open_issues_count}}</td>\r",
+              "            <td>{{license}}</td>\r",
+              "            <td>{{allow_forking}}</td>\r",
+              "            <td>{{is_template}}</td>\r",
+              "            <td>{{web_commit_signoff_required}}</td>\r",
+              "        </tr>\r",
+              "    {{/each}}\r",
+              "</table>\r",
+              "`;\r",
+              "\r",
+              "function constructVisualizerPayload() {\r",
+              "    return {response: pm.response.json()}\r",
+              "}\r",
+              "\r",
+              "pm.visualizer.set(template, constructVisualizerPayload());"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "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",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.github.com/users/sahilkaloniya0/repos",
+          "protocol": "https",
+          "host": [
+            "api",
+            "github",
+            "com"
+          ],
+          "path": [
+            "users",
+            "sahilkaloniya0",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Fetch Projects",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var template = `\r",
+              "<style type=\"text/css\">\r",
+              "    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+              "    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+              "    .tftable tr {background-color:#ffffff;}\r",
+              "    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+              "    .tftable tr:hover {background-color:#e0ffff;}\r",
+              "</style>\r",
+              "\r",
+              "<table class=\"tftable\" border=\"1\">\r",
+              "    <tr>\r",
+              "        <th>No Projects Available</th>\r",
+              "    </tr>\r",
+              "</table>\r",
+              "`;\r",
+              "\r",
+              "function constructVisualizerPayload() {\r",
+              "    return {response: pm.response.json()}\r",
+              "}\r",
+              "\r",
+              "pm.visualizer.set(template, constructVisualizerPayload());"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "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",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.github.com/repos/sahilkaloniya0/Github_API_Testing/projects",
+          "protocol": "https",
+          "host": [
+            "api",
+            "github",
+            "com"
+          ],
+          "path": [
+            "repos",
+            "sahilkaloniya0",
+            "Github_API_Testing",
+            "projects"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create an issue",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var template = `\r",
+              "<style type=\"text/css\">\r",
+              "    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+              "    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+              "    .tftable tr {background-color:#ffffff;}\r",
+              "    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+              "    .tftable tr:hover {background-color:#e0ffff;}\r",
+              "</style>\r",
+              "\r",
+              "<table class=\"tftable\" border=\"1\">\r",
+              "    <tr>\r",
+              "        <th>Property</th>\r",
+              "        <th>Value</th>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>URL</td>\r",
+              "        <td>{{response.url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Repository URL</td>\r",
+              "        <td>{{response.repository_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Labels URL</td>\r",
+              "        <td>{{response.labels_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Comments URL</td>\r",
+              "        <td>{{response.comments_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Events URL</td>\r",
+              "        <td>{{response.events_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>HTML URL</td>\r",
+              "        <td>{{response.html_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>ID</td>\r",
+              "        <td>{{response.id}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Node ID</td>\r",
+              "        <td>{{response.node_id}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Number</td>\r",
+              "        <td>{{response.number}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Title</td>\r",
+              "        <td>{{response.title}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>State</td>\r",
+              "        <td>{{response.state}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Locked</td>\r",
+              "        <td>{{response.locked}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Assignee</td>\r",
+              "        <td>{{response.assignee}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Comments</td>\r",
+              "        <td>{{response.comments}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Created At</td>\r",
+              "        <td>{{response.created_at}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Updated At</td>\r",
+              "        <td>{{response.updated_at}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Closed At</td>\r",
+              "        <td>{{response.closed_at}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Author Association</td>\r",
+              "        <td>{{response.author_association}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Active Lock Reason</td>\r",
+              "        <td>{{response.active_lock_reason}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Body</td>\r",
+              "        <td>{{response.body}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Closed By</td>\r",
+              "        <td>{{response.closed_by}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Timeline URL</td>\r",
+              "        <td>{{response.timeline_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Performed Via Github App</td>\r",
+              "        <td>{{response.performed_via_github_app}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>State Reason</td>\r",
+              "        <td>{{response.state_reason}}</td>\r",
+              "    </tr>\r",
+              "</table>\r",
+              "`;\r",
+              "\r",
+              "function constructVisualizerPayload() {\r",
+              "    return {response: pm.response.json()}\r",
+              "}\r",
+              "\r",
+              "pm.visualizer.set(template, constructVisualizerPayload());"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "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",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"New Issue from Postman\",\r\n  \"body\": \"This issue was created through Postman API request.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.github.com/repos/sahilkaloniya0/My_First_Github_API_Testing/issues",
+          "protocol": "https",
+          "host": [
+            "api",
+            "github",
+            "com"
+          ],
+          "path": [
+            "repos",
+            "sahilkaloniya0",
+            "My_First_Github_API_Testing",
+            "issues"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update an issue",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "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",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Updated Issue Title and my name is sahil kaloniya\",\r\n  \"body\": \"This is the updated description of the issue and i just update dit with postman\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.github.com/repos/sahilkaloniya0/My_First_Github_API_Testing/issues/1",
+          "protocol": "https",
+          "host": [
+            "api",
+            "github",
+            "com"
+          ],
+          "path": [
+            "repos",
+            "sahilkaloniya0",
+            "My_First_Github_API_Testing",
+            "issues",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete an issue",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var template = `\r",
+              "<style type=\"text/css\">\r",
+              "    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+              "    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+              "    .tftable tr {background-color:#ffffff;}\r",
+              "    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+              "    .tftable tr:hover {background-color:#e0ffff;}\r",
+              "</style>\r",
+              "\r",
+              "<table class=\"tftable\" border=\"1\">\r",
+              "    <tr>\r",
+              "        <th>Property</th>\r",
+              "        <th>Value</th>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>URL</td>\r",
+              "        <td>{{response.url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Repository URL</td>\r",
+              "        <td>{{response.repository_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Labels URL</td>\r",
+              "        <td>{{response.labels_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Comments URL</td>\r",
+              "        <td>{{response.comments_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Events URL</td>\r",
+              "        <td>{{response.events_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>HTML URL</td>\r",
+              "        <td>{{response.html_url}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>ID</td>\r",
+              "        <td>{{response.id}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Node ID</td>\r",
+              "        <td>{{response.node_id}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Number</td>\r",
+              "        <td>{{response.number}}</td>\r",
+              "    </tr>\r",
+              "    <tr>\r",
+              "        <td>Title</td>\r",
+              "        <td>{{response.title}}</td>\r",
+              "    </tr>\r",
+              "</table>\r",
+              "`;\r",
+              "\r",
+              "function constructVisualizerPayload() {\r",
+              "    return { response: pm.response.json() }\r",
+              "}\r",
+              "\r",
+              "pm.visualizer.set(template, constructVisualizerPayload());"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "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",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"state\" : \"closed\"\r\n}\r\n\r\n\r\n// Github doesn't allow you to directly delete instead we use PATCH request to counter it.",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.github.com/repos/sahilkaloniya0/My_First_Github_API_Testing/issues/3",
+          "protocol": "https",
+          "host": [
+            "api",
+            "github",
+            "com"
+          ],
+          "path": [
+            "repos",
+            "sahilkaloniya0",
+            "My_First_Github_API_Testing",
+            "issues",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Handle Rate Limits",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.github.com/rate_limit",
+          "protocol": "https",
+          "host": [
+            "api",
+            "github",
+            "com"
+          ],
+          "path": [
+            "rate_limit"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
